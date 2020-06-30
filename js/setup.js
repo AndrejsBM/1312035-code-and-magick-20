@@ -12,17 +12,16 @@ userDialog.classList.remove('hidden');
 
 var similarListElement = userDialog.querySelector('.setup-similar-list');
 
+var similarWizardTemplate = document.querySelector('#similar-wizard-template')
+   .content
+  .querySelector('.setup-similar-item');
+
 
 var getRandomNumber = function (maxRandomNumber) {
   var randomNumber = Math.round(Math.random() * maxRandomNumber);
 
   return randomNumber;
 };
-
-var similarWizardTemplate = document.querySelector('#similar-wizard-template')
-   .content
-  .querySelector('.setup-similar-item');
-
 
 var generateWizard = function () {
   var wizardArray = [];
@@ -36,6 +35,8 @@ var generateWizard = function () {
 
   return wizardArray;
 };
+
+var wizardArray = generateWizard();
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
