@@ -113,20 +113,20 @@ setupClose.addEventListener('keydown', function (evt) {
 });
 
 var chooseCoatColor = function () {
-  wizardCoat.addEventListener('click', function() {
+  wizardCoat.addEventListener('click', function () {
     wizardCoat.style.fill = WIZARD_COAT_COLORS[getRandomNumber(WIZARD_COAT_COLORS.length)];
   });
 };
 
 var chooseEyesColor = function () {
-  wizardEyes.addEventListener('click', function() {
+  wizardEyes.addEventListener('click', function () {
     wizardEyes.style.fill = WIZARD_EYES_COLORS[getRandomNumber(WIZARD_EYES_COLORS.length)];
   });
 };
 
 
 var chooseFireballColor = function () {
-    fireballColor.addEventListener('click', function() {
+  fireballColor.addEventListener('click', function () {
     fireballInput.value = WIZARD_FIREBALL_COLORS[getRandomNumber(WIZARD_FIREBALL_COLORS.length)];
     fireballColor.style.backgroundColor = fireballInput.value;
   });
