@@ -78,18 +78,18 @@ var openPopup = function () {
   setup.classList.remove('hidden');
 
   document.addEventListener('keydown', onPopupEscPress);
-  document.addEventListener('click', chooseCoatColor);
-  document.addEventListener('click', chooseEyesColor);
-  document.addEventListener('click', chooseFireballColor);
+  wizardEyes.addEventListener('click', chooseEyesColor);
+  wizardCoat.addEventListener('click', chooseCoatColor);
+  fireballColor.addEventListener('click', chooseFireballColor);
 };
 
 var closePopup = function () {
   setup.classList.add('hidden');
 
   document.removeEventListener('keydown', onPopupEscPress);
-  document.removeEventListener('click', chooseCoatColor);
-  document.removeEventListener('click', chooseEyesColor);
-  document.removeEventListener('click', chooseFireballColor);
+  wizardCoat.removeEventListener('click', chooseCoatColor);
+  wizardEyes.removeEventListener('click', chooseEyesColor);
+  fireballColor.removeEventListener('click', chooseFireballColor);
 };
 
 setupOpen.addEventListener('click', function () {
@@ -113,21 +113,14 @@ setupClose.addEventListener('keydown', function (evt) {
 });
 
 var chooseCoatColor = function () {
-  wizardCoat.addEventListener('click', function () {
-    wizardCoat.style.fill = WIZARD_COAT_COLORS[getRandomNumber(WIZARD_COAT_COLORS.length)];
-  });
+  wizardCoat.style.fill = WIZARD_COAT_COLORS[getRandomNumber(WIZARD_COAT_COLORS.length - 1)];
 };
 
 var chooseEyesColor = function () {
-  wizardEyes.addEventListener('click', function () {
-    wizardEyes.style.fill = WIZARD_EYES_COLORS[getRandomNumber(WIZARD_EYES_COLORS.length)];
-  });
+  wizardEyes.style.fill = WIZARD_EYES_COLORS[getRandomNumber(WIZARD_EYES_COLORS.length - 1)];
 };
 
-
 var chooseFireballColor = function () {
-  fireballColor.addEventListener('click', function () {
-    fireballInput.value = WIZARD_FIREBALL_COLORS[getRandomNumber(WIZARD_FIREBALL_COLORS.length)];
-    fireballColor.style.backgroundColor = fireballInput.value;
-  });
+  fireballInput.value = WIZARD_FIREBALL_COLORS[getRandomNumber(WIZARD_FIREBALL_COLORS.length - 1)];
+  fireballColor.style.backgroundColor = fireballInput.value;
 };
